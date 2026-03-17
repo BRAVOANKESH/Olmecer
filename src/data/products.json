@@ -26,5 +26,19 @@
     "price": 229,
     "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
     "rating": 4.3
+  },
+  {
+    "id": 5,
+    "name": "Holi Special Mix",
+    "price": 229,
+    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
+    "rating": 4.3
+  },
+  {
+    "id": 6,
+    "name": "Heel",
+    "price": 229,
+    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
+    "rating": 4.3
   }
 ]
