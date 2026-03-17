@@ -1,0 +1,16 @@
+:root {
+  /* Core palette */
+  --color-bg-dark: #0f172a;
+  --color-overlay: rgba(15, 23, 42, 0.75);
+  --color-white: #ffffff;
+  --color-muted: #e2e8f0;
+  --color-accent: #facc15;
+  --color-black: #000000;
+  --color-cta-text: #111111;
+}
+
+/* Utility helpers */
+.text-primary { color: var(--color-white); }
+.text-muted { color: var(--color-muted); }
+.bg-dark { background: var(--color-bg-dark); }
+.accent { color: var(--color-accent); }

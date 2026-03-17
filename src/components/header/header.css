@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    background: var(--color-bg-dark);
+    color: var(--color-white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: none;
+}
+
+.oc-container {
+    padding: 25px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+    background: radial-gradient(circle at top, transparent, var(--color-accent) 80%);
+    pointer-events: none;
+}
+
+/* Logo */
+.oc-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+/* Nav */
+.menu-items {
+    display: flex;
+    gap: 20px;
+}
+
+.oc-nav-link {
+    text-decoration: none;
+    color: var(--color-muted);
+    transition: 0.3s;
+}
+
+.oc-nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* Buttons */
+.oc-user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.oc-btn {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.login {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-accent);
+}
+
+.signup {
+    background: var(--color-accent);
+    color: var(--color-cta-text);
+}
+
+.oc-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Wrapper */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+    .oc-container {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-wrapper {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--color-bg-dark);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-wrapper.open {
+        display: flex;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .oc-user-actions {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .oc-btn {
+        width: 80%;
+    }
+}

@@ -1,0 +1,11 @@
+*{
+    /* background-color: antiquewhite; */
+    padding: 0;
+    margin: auto;
+}
+.body{
+    /* background-color: antiquewhite; */
+    background-color: var(--color-black);
+    margin: 2px;
+    /* padding: 40px; */
+}

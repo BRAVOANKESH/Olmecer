@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Dark Chocolate Delight",
+    "price": 199,
+    "image": "https://images.unsplash.com/photo-1587241321921-91a834d6d191",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Milk Chocolate Bliss",
+    "price": 149,
+    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "name": "Hazelnut Crunch",
+    "price": 249,
+    "image": "https://images.unsplash.com/photo-1610450949065-1f2841536c88",
+    "rating": 4.8
+  },
+  {
+    "id": 4,
+    "name": "Caramel Fusion",
+    "price": 229,
+    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
+    "rating": 4.3
+  }
+]
