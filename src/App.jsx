@@ -1,4 +1,5 @@
 import './App.css'
+import Footer from './components/footer/footer'
 import Home from './pages/Home-page/Home'
 import PLP from './pages/Product-listing-page/plp'
 
@@ -8,6 +9,7 @@ function App() {
     <div className="body">
       <Home />
       <PLP />
+      <Footer />
     </div>
     </>
   )
