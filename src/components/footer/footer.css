@@ -1,9 +1,168 @@
-.footer{
-    width: 100%;
-    height: 300px;
-    color: var(--color-accent);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:  var(--color-bg-dark);
-} 
+/* --- Base Footer Setup --- */
+.olm-ftr-section {
+  background-color: #030303; /* Slightly darker than the #050505 page background for depth */
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separation line */
+  padding-top: 5rem;
+}
+
+.olm-ftr-container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* --- Main Grid Layout --- */
+.olm-ftr-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* --- Brand Column --- */
+.olm-ftr-logo {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.olm-ftr-dot {
+  color: #d4af37; /* Signature Gold */
+}
+
+.olm-ftr-description {
+  color: #a3a3a3;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 320px;
+  margin: 0;
+}
+
+/* --- Links Columns --- */
+.olm-ftr-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.02em;
+}
+
+.olm-ftr-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.olm-ftr-list a {
+  color: #a3a3a3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Smooth color shift and slight nudge on hover */
+.olm-ftr-list a:hover {
+  color: #d4af37;
+  transform: translateX(4px); 
+}
+
+/* --- Social Column --- */
+.olm-ftr-social-icons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.olm-ftr-social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.olm-ftr-social-icons svg {
+  width: 18px;
+  height: 18px;
+}
+
+.olm-ftr-social-icons a:hover {
+  background: #d4af37;
+  color: #030303;
+  border-color: #d4af37;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* --- Bottom Legal Bar --- */
+.olm-ftr-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: #737373;
+}
+
+.olm-ftr-bottom p {
+  margin: 0;
+}
+
+.olm-ftr-legal {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.olm-ftr-legal a {
+  color: #737373;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.olm-ftr-legal a:hover {
+  color: #ffffff;
+}
+
+.olm-ftr-separator {
+  color: #333;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .olm-ftr-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .olm-ftr-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .olm-ftr-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

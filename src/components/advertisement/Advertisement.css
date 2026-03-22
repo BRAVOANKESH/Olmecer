@@ -1,0 +1,191 @@
+/* --- Base Section Setup --- */
+.olm-ad-section {
+  padding: 6rem 5%;
+  background-color: #050505; /* Seamless blend with the rest of the site */
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.olm-ad-container {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+/* --- Ambient Gold Glow Behind the Card --- */
+.olm-ad-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+  z-index: 0;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* --- The Glass Card Container --- */
+.olm-ad-glass-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Text gets slightly more space than image */
+  background: rgba(20, 15, 10, 0.5); /* Frosted dark brown tint */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Content Side --- */
+.olm-ad-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.olm-ad-badge {
+  align-self: flex-start;
+  padding: 0.4rem 1.2rem;
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.olm-ad-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.olm-ad-accent {
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.olm-ad-description {
+  color: #a3a3a3;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+/* --- Subscription Form --- */
+.olm-ad-form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.olm-ad-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.olm-ad-input::placeholder {
+  color: #666;
+}
+
+.olm-ad-input:focus {
+  border-color: #d4af37;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.olm-ad-btn {
+  padding: 1rem 2rem;
+  background: #d4af37;
+  color: #050505;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.olm-ad-btn:hover {
+  background: #f4ce56;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* --- Visual Side --- */
+.olm-ad-visual {
+  position: relative;
+  height: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.olm-ad-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 12s ease-out; /* Ultra slow, premium zoom */
+}
+
+.olm-ad-glass-card:hover .olm-ad-img {
+  transform: scale(1.15);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .olm-ad-glass-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .olm-ad-visual {
+    grid-row: 1; /* Moves the image above the text on mobile */
+    min-height: 250px;
+  }
+
+  .olm-ad-content {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .olm-ad-badge {
+    align-self: center; /* Centers the badge on mobile */
+  }
+
+  .olm-ad-description {
+    margin: 0 auto 2rem auto;
+  }
+
+  .olm-ad-form {
+    flex-direction: column; /* Stacks the input and button */
+  }
+
+  .olm-ad-btn {
+    width: 100%;
+  }
+}

@@ -1,11 +1,11 @@
-import Advertisement from "../../components/Advertisement/advert";
-import Header from "../../components/header/header";
+import Advertisement from "../../components/advertisement/Advertisement";
+import Gallery from "../../components/Gallery/gallery";
 import Hero from "../../components/hero-banner/Hero";
 export default function Home() {
     return (
     <>
-        <Header />
         <Hero />
+        <Gallery />
         <Advertisement />
     </>
     )

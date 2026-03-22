@@ -1,54 +1,152 @@
-.product-card {
-  background: #1e293b;
-  border-radius: 15px;
+/* --- Link Wrapper --- */
+.olm-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Base Card --- */
+.olm-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  cursor: pointer;
+}
+
+/* --- Image Wrapper & Zoom --- */
+.olm-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4; /* Tall luxury fashion/food ratio */
+  border-radius: 16px;
   overflow: hidden;
-  transition: 0.3s;
-  cursor: pointer;
+  background-color: #111;
+  /* Very subtle glass border */
+  border: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-
-/* Image */
-.product-card img {
+.olm-card-img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Info */
-.product-info {
-  padding: 15px;
-  color: white;
+.olm-card-container:hover .olm-card-img {
+  transform: scale(1.06);
 }
 
-.product-info h3 {
-  margin-bottom: 8px;
-}
-
-.price {
-  color: #facc15;
-  font-weight: bold;
-}
-
-.rating {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-/* Button */
-.add-btn {
+/* Image Placeholder Fallback */
+.olm-card-image-placeholder {
   width: 100%;
-  padding: 10px;
-  border: none;
-  background: #facc15;
-  color: black;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  gap: 0.5rem;
 }
 
-.add-btn:hover {
-  background: #fde047;
+.olm-card-image-placeholder span {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.olm-card-image-placeholder p {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* --- Floating Quick-Add Action --- */
+.olm-card-quick-add {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.olm-card-container:hover .olm-card-quick-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.olm-card-add-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(20, 15, 10, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.3); /* Gold rim */
+  color: #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.olm-card-add-btn:hover {
+  background: #d4af37;
+  color: #050505;
+  transform: scale(1.1);
+}
+
+.olm-card-add-btn.added {
+  background: #d4af37;
+  color: #050505;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* --- Minimal Info Section --- */
+.olm-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.5rem; /* Slight indent from image edges */
+}
+
+.olm-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.olm-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.olm-card-rating {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  font-weight: 500;
+}
+
+.olm-card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #d4af37;
+  font-style: italic;
+  margin: 0;
 }

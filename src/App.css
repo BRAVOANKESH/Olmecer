@@ -1,11 +1,8 @@
-*{
-    /* background-color: antiquewhite; */
+* {
     padding: 0;
-    margin: auto;
+    margin: 0;
 }
-.body{
-    /* background-color: antiquewhite; */
+.body {
     background-color: var(--color-black);
-    margin: 2px;
     /* padding: 40px; */
 }

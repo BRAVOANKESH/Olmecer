@@ -1,142 +1,292 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- Base Header Setup --- */
+.olm-hdr-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 2rem 0; /* Taller padding at the very top */
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform; /* GPU acceleration; isolates rendering layer */
 }
 
-.header {
-    width: 100%;
-    background: var(--color-bg-dark);
-    color: var(--color-white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: none;
+/* --- The Slick "Scrolled" Glassmorphism State --- */
+.olm-hdr-wrapper.olm-hdr-scrolled {
+  padding: 1rem 0; /* Shrinks slightly when scrolling */
+  background: rgba(10, 8, 5, 0.7); /* Deep dark with a very slight warm tint */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.oc-container {
-    padding: 25px 60px;
+.olm-hdr-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.olm-hdr-logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  z-index: 1001; /* Keeps logo above mobile menu */
+}
+
+.olm-hdr-dot {
+  color: #d4af37; /* Signature Olmecer Gold */
+}
+
+/* --- Search Bar --- */
+.olm-hdr-search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  margin: 0 2rem;
+}
+
+.olm-hdr-search-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.olm-hdr-search-input::placeholder {
+  color: #666;
+}
+
+.olm-hdr-search-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+/* Search Dropdown */
+.olm-search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10, 8, 5, 0.98);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1002;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.olm-search-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.olm-search-item:hover {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.olm-search-item img {
+  width: 40px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.olm-search-item-info {
+  flex: 1;
+}
+
+.olm-search-item-name {
+  color: #ffffff;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.olm-search-item-price {
+  color: #d4af37;
+  margin: 0.25rem 0 0 0;
+  font-size: 0.8rem;
+}
+
+.olm-search-view-all {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: none;
+  color: #d4af37;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+  transition: background 0.2s ease;
+}
+
+/* --- Desktop Navigation --- */
+.olm-hdr-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.olm-hdr-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.olm-hdr-links a:hover {
+  color: #ffffff;
+}
+
+/* Premium Gold Underline Hover Effect */
+.olm-hdr-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #d4af37;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.olm-hdr-links a:hover::after {
+  width: 100%;
+}
+
+/* --- Cart Icon --- */
+.olm-hdr-cart {
+  position: relative;
+  color: #d4af37;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.olm-hdr-cart:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #d4af37;
+  color: #050505;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* --- Custom Animated Hamburger --- */
+.olm-hdr-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.olm-hdr-line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: left;
+}
+
+/* Transforms into an X when active */
+.olm-hdr-hamburger-active .olm-hdr-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+.olm-hdr-hamburger-active .olm-hdr-line:nth-child(2) {
+  opacity: 0;
+}
+.olm-hdr-hamburger-active .olm-hdr-line:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* --- Mobile Menu Overlay --- */
+@media (max-width: 850px) {
+  .olm-hdr-hamburger {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+  }
 
-.header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 6px;
-    background: radial-gradient(circle at top, transparent, var(--color-accent) 80%);
-    pointer-events: none;
-}
-
-/* Logo */
-.oc-logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--color-accent);
-}
-
-/* Nav */
-.menu-items {
-    display: flex;
-    gap: 20px;
-}
-
-.oc-nav-link {
-    text-decoration: none;
-    color: var(--color-muted);
-    transition: 0.3s;
-}
-
-.oc-nav-link:hover {
-    color: var(--color-accent);
-}
-
-/* Buttons */
-.oc-user-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.oc-btn {
-    padding: 8px 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.login {
-    background: transparent;
-    color: var(--color-white);
-    border: 1px solid var(--color-accent);
-}
-
-.signup {
-    background: var(--color-accent);
-    color: var(--color-cta-text);
-}
-
-.oc-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Hamburger */
-.hamburger {
+  .olm-hdr-search-wrapper {
     display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
+  }
 
-/* Wrapper */
-.nav-wrapper {
+  .olm-hdr-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.98); /* Solid dark for mobile */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-}
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
 
-/* 📱 Mobile */
-@media (max-width: 768px) {
-    .oc-container {
-        padding: 15px 20px;
-    }
+  .olm-hdr-nav-open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
 
-    .hamburger {
-        display: block;
-    }
+  .olm-hdr-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
 
-    .nav-wrapper {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--color-bg-dark);
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px;
-        display: none;
-    }
-
-    .nav-wrapper.open {
-        display: flex;
-    }
-
-    .menu-items {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .oc-user-actions {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .oc-btn {
-        width: 80%;
-    }
+  .olm-hdr-links a {
+    font-size: 1.5rem; /* Larger text for better mobile tapping */
+    letter-spacing: 0.15em;
+  }
 }

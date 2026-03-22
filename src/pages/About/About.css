@@ -1,0 +1,309 @@
+/* --- Base Page Setup --- */
+.olm-abt-page {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.olm-abt-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.olm-abt-section {
+  padding: 8rem 0;
+}
+
+/* --- Typography Utilities --- */
+.olm-abt-accent {
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.olm-abt-section-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: -0.02em;
+}
+
+/* --- Hero Section --- */
+.olm-abt-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.olm-abt-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/public/Hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  z-index: 0;
+  filter: brightness(0.4);
+}
+
+.olm-abt-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.olm-abt-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.olm-abt-title {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.olm-abt-subtitle {
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+/* --- Glassmorphism Card Utility --- */
+.olm-abt-glass-card {
+  background: rgba(20, 15, 10, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.olm-abt-glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* --- Story Section --- */
+.olm-abt-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.olm-abt-story-text h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.olm-abt-story-text p {
+  color: #a3a3a3;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.olm-abt-story-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.olm-abt-glass-card h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.olm-abt-glass-card p {
+  color: #a3a3a3;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Values Section --- */
+.olm-abt-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.olm-abt-value-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.olm-abt-value-card:hover {
+  background: rgba(20, 15, 10, 0.3);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.olm-abt-icon {
+  width: 48px;
+  height: 48px;
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+}
+
+.olm-abt-value-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+
+.olm-abt-value-card p {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Sleek Timeline Section --- */
+.olm-abt-timeline-bg {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(20, 15, 10, 0.8) 0%, #050505 70%);
+}
+
+.olm-abt-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* The vertical gold line */
+.olm-abt-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px; /* Centers the line with the dot */
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #d4af37, transparent);
+}
+
+.olm-abt-timeline-item {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 4rem;
+}
+
+.olm-abt-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.olm-abt-timeline-dot {
+  position: absolute;
+  left: 17px;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+.olm-abt-year {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* --- CTA Section --- */
+.olm-abt-cta {
+  position: relative;
+  padding: 8rem 5%;
+  text-align: center;
+  background-image: url('https://images.unsplash.com/photo-1548907040-4baa42d109de?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.olm-abt-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #050505 0%, rgba(5,5,5,0.7) 50%, #050505 100%);
+}
+
+.olm-abt-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.olm-abt-cta h2 {
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.olm-abt-cta p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 3rem;
+}
+
+.olm-abt-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: #d4af37;
+  color: #050505;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.olm-abt-btn:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .olm-abt-story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .olm-abt-timeline::before {
+    left: 15px;
+  }
+
+  .olm-abt-timeline-dot {
+    left: 8px;
+  }
+
+  .olm-abt-timeline-item {
+    padding-left: 50px;
+  }
+}

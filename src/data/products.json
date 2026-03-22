@@ -3,57 +3,96 @@
     "id": 1,
     "name": "Dark Chocolate Delight",
     "price": 199,
-    "image": "https://images.unsplash.com/photo-1587241321921-91a834d6d191",
-    "rating": 4.5
+    "image": "https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=500&h=600",
+    "rating": 4.5,
+    "category": "Dark Chocolate"
   },
   {
     "id": 2,
     "name": "Milk Chocolate Bliss",
     "price": 149,
-    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
-    "rating": 4.2
+    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=500&h=600",
+    "rating": 4.2,
+    "category": "Milk Chocolate"
   },
   {
     "id": 3,
     "name": "Hazelnut Crunch",
     "price": 249,
-    "image": "https://images.unsplash.com/photo-1610450949065-1f2841536c88",
-    "rating": 4.8
+    "image": "https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=500&h=600",
+    "rating": 4.8,
+    "category": "Dark Chocolate"
   },
   {
     "id": 4,
     "name": "Caramel Fusion",
     "price": 229,
-    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
-    "rating": 4.3
+    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=500&h=600",
+    "rating": 4.3,
+    "category": "Truffles"
   },
   {
     "id": 5,
     "name": "Holi Special Mix",
-    "price": 229,
-    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
-    "rating": 4.3
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1599599810694-b5ac4dd0b1af?w=500&h=600",
+    "rating": 4.7,
+    "category": "Gifts"
   },
   {
     "id": 6,
-    "name": "Heel",
-    "price": 229,
-    "image": "https://images.unsplash.com/photo-1548907040-4baa42d10919",
-    "rating": 4.3
+    "name": "Strawberry Truffle",
+    "price": 179,
+    "image": "https://images.unsplash.com/photo-1599599810434-521489584569?w=500&h=600",
+    "rating": 4.4,
+    "category": "Truffles"
   },
-    {
+  {
     "id": 7,
-    "name": "Dark Chocolate Delight",
-    "price": 199,
-    "image": "https://images.unsplash.com/photo-1587241321921-91a834d6d191",
-    "rating": 4.5
+    "name": "Premium Dark Selection",
+    "price": 399,
+    "image": "https://images.unsplash.com/photo-1599599810980-d573e8aaeb0c?w=500&h=600",
+    "rating": 4.9,
+    "category": "Gifts"
   },
   {
     "id": 8,
-    "name": "Milk Chocolate Bliss",
-    "price": 149,
-    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52",
-    "rating": 4.2
+    "name": "Milk Chocolate Truffle",
+    "price": 159,
+    "image": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=500&h=600",
+    "rating": 4.3,
+    "category": "Truffles"
+  },
+  {
+    "id": 9,
+    "name": "Dark Exotic Blend",
+    "price": 279,
+    "image": "https://images.unsplash.com/photo-1599599810965-cb33eda08e86?w=500&h=600",
+    "rating": 4.6,
+    "category": "Dark Chocolate"
+  },
+  {
+    "id": 10,
+    "name": "Milk Chocolate Mint",
+    "price": 169,
+    "image": "https://images.unsplash.com/photo-1599599810537-c7fb91fc1213?w=500&h=600",
+    "rating": 4.1,
+    "category": "Milk Chocolate"
+  },
+  {
+    "id": 11,
+    "name": "Luxury Gift Box",
+    "price": 499,
+    "image": "https://images.unsplash.com/photo-1599599810780-d9b5d9b5d73d?w=500&h=600",
+    "rating": 4.8,
+    "category": "Gifts"
+  },
+  {
+    "id": 12,
+    "name": "Coffee Truffle Delight",
+    "price": 189,
+    "image": "https://images.unsplash.com/photo-1599599810563-430f63602022?w=500&h=600",
+    "rating": 4.4,
+    "category": "Truffles"
   }
-  
 ]

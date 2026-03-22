@@ -1,0 +1,180 @@
+/* --- Base Gallery Setup --- */
+.olm-gal-section {
+  background-color: #050505; /* Matches Hero */
+  padding: 120px 0 8rem 0; /* Top padding accounts for fixed header */
+  color: #ffffff;
+}
+
+.olm-gal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* --- Header Styling --- */
+.olm-gal-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.olm-gal-header h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.olm-gal-highlight {
+  color: #d4af37; /* Olmecer Gold */
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.olm-gal-header p {
+  color: #a3a3a3;
+  font-size: 1.125rem;
+}
+
+/* --- Uneven Bento Grid System --- */
+.olm-gal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 280px;
+  /* gap: 1.5rem; */
+  /* 'dense' magically fills in empty spaces if items are different sizes */
+  grid-auto-flow: dense; 
+}
+
+/* Specific Spans to create the magazine look */
+.olm-gal-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.olm-gal-tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.olm-gal-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.olm-gal-standard {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* --- Individual Image Cards --- */
+.olm-gal-item {
+  position: relative;
+  /* border-radius: 20px; */
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #111; /* Fallback while image loads */
+}
+
+.olm-gal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.olm-gal-item:hover .olm-gal-image {
+  transform: scale(1.08); /* Smooth inner zoom */
+}
+
+/* --- Glassmorphism Hover Overlay --- */
+.olm-gal-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.olm-gal-item:hover .olm-gal-overlay {
+  opacity: 1;
+}
+
+/* The Frosted Glass Info Card */
+.olm-gal-glass-card {
+  background: rgba(20, 15, 10, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.olm-gal-item:hover .olm-gal-glass-card {
+  transform: translateY(0); /* Slides up nicely on hover */
+}
+
+.olm-gal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.olm-gal-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.olm-gal-price {
+  color: #d4af37;
+}
+
+.olm-gal-rating {
+  color: #e5e5e5;
+  font-size: 0.85rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .olm-gal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .olm-gal-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .olm-gal-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+  }
+  /* On mobile, everything stacks neatly as 1x1 */
+  .olm-gal-large, 
+  .olm-gal-tall, 
+  .olm-gal-wide, 
+  .olm-gal-standard {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  /* Always show the glass card on mobile since hover doesn't exist */
+  .olm-gal-overlay {
+    opacity: 1;
+    background: transparent;
+  }
+  .olm-gal-glass-card {
+    transform: translateY(0);
+  }
+}
